@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token Listesi</title>
+</head>
+<body>
+    <h1>Token Listesi</h1>
+    {% if tokens %}
+        {% for token in tokens[:20] %}
+            {% if token.get("name") and token.get("symbol") %}
+                <h2>{{ token.get("name", "?") }} ({{ token.get("symbol", "?") }})</h2>
+                <p>Address: {{ token.get("address", "?") }}</p>
+                <p>Decimals: {{ token.get("decimals", "?") }}</p>
+                <img src="{{ token.get("logoURI", "") }}" alt="Logo" width="50"><hr>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>Veri çekilemedi veya token listesi boş.</p>
+    {% endif %}
+</body>
+</html>
