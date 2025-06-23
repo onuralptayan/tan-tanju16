@@ -1,0 +1,1 @@
+# örnek app.py içeriği
