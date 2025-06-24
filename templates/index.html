@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Token Listesi</title>
+</head>
+<body>
+    <h1>Token Listesi</h1>
+    {% if tokens %}
+        {% for token in tokens %}
+            <div>
+                <p><strong>İmza:</strong> {{ token.signature }}</p>
+                <p><strong>Slot:</strong> {{ token.slot }}</p>
+                <hr>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Veri çekilemedi veya token listesi boş.</p>
+    {% endif %}
+</body>
+</html>
