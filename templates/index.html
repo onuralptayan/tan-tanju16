@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token Listesi</title>
+</head>
+<body>
+    <h1>Token Listesi</h1>
+    {% if tokens %}
+        <ul>
+        {% for token in tokens %}
+            <li>{{ token.name }} ({{ token.symbol }}) - Signature: {{ token.signature }}, Slot: {{ token.slot }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Veri çekilemedi veya token listesi boş.</p>
+    {% endif %}
+</body>
+</html>
