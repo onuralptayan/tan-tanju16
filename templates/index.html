@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Token Paneli</title>
+  </head>
+  <body>
+    <h1>Token Listesi</h1>
+    {% if tokens %}
+        <ul>
+        {% for token in tokens %}
+            <li><strong>Signature:</strong> {{ token.signature }} | <strong>Slot:</strong> {{ token.slot }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Veri çekilemedi veya token listesi boş.</p>
+    {% endif %}
+  </body>
+</html>
